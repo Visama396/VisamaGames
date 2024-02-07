@@ -1,0 +1,52 @@
+---
+import { APIKEY } from '../shared/constants'
+
+import GameCard from './GameCard.astro'
+
+let order1 = 0, order2 = 1, order3 = 2, order4 = 3
+let counter1 = -1, counter2 = -1, counter3 = -1, counter4 = -1
+const data = await fetch(`https://api.rawg.io/api/games?key=${APIKEY}&dates=2024-02-01,2024-03-01`).then(response => response.json()).catch(err => console.error(err))
+---
+
+<section>
+  <h1 class="text-6xl text-white font-bold">New and Trending</h1>
+  <p class="text-white text-md">Based on players contributions</p>
+  <div class="flex flex-row mt-6 gap-4">
+    <div class="flex w-full flex-col gap-4">
+      {data.results.map((game: { name: string}) => {
+        counter1++
+        if (order1 == counter1) {
+          order1 += 4
+          return <GameCard game={game} />
+        }
+      })}
+    </div>
+    <div class="flex w-full flex-col gap-4">
+      {data.results.map((game: { name: string}) => {
+        counter2++
+        if (order2 == counter2) {
+          order2 += 4
+          return <GameCard game={game} />
+        }
+      })}
+    </div>
+    <div class="flex w-full flex-col gap-4">
+      {data.results.map((game: { name: string}) => {
+        counter3++
+        if (order3 == counter3) {
+          order3 += 4
+          return <GameCard game={game} />
+        }
+      })}
+    </div>
+    <div class="flex w-full flex-col gap-4">
+      {data.results.map((game: { name: string}) => {
+        counter4++
+        if (order4 == counter4) {
+          order4 += 4
+          return <GameCard game={game} />
+        }
+      })}
+    </div>
+  </div>
+</section>

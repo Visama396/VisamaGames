@@ -1,0 +1,7 @@
+---
+const { game } = Astro.props
+---
+<a href={`/${game.slug}`} class="bg-zinc-800/50 rounded-md hover:scale-110 transition">
+  <img src={game.short_screenshots[0].image} alt={`Screenshot of ${game.name}`}>
+  <h2 class="text-white text-xl font-semibold">{game.name}</h2>
+</a>
