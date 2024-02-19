@@ -12,7 +12,7 @@ const data = await fetch(`https://api.rawg.io/api/games?key=${APIKEY}&dates=2024
   <h1 class="text-6xl text-white font-bold">New and Trending</h1>
   <p class="text-white text-md">Based on players contributions</p>
   <div class="flex flex-row mt-6 gap-4">
-    <div class="flex w-full flex-col gap-4">
+    <div class="flex w-full flex-col gap-4" id="column-1">
       {data.results.map((game: { name: string}) => {
         counter1++
         if (order1 == counter1) {
@@ -21,7 +21,7 @@ const data = await fetch(`https://api.rawg.io/api/games?key=${APIKEY}&dates=2024
         }
       })}
     </div>
-    <div class="flex w-full flex-col gap-4">
+    <div class="flex w-full flex-col gap-4" id="column-2">
       {data.results.map((game: { name: string}) => {
         counter2++
         if (order2 == counter2) {
@@ -30,7 +30,7 @@ const data = await fetch(`https://api.rawg.io/api/games?key=${APIKEY}&dates=2024
         }
       })}
     </div>
-    <div class="flex w-full flex-col gap-4">
+    <div class="flex w-full flex-col gap-4" id="column-3">
       {data.results.map((game: { name: string}) => {
         counter3++
         if (order3 == counter3) {
@@ -39,7 +39,7 @@ const data = await fetch(`https://api.rawg.io/api/games?key=${APIKEY}&dates=2024
         }
       })}
     </div>
-    <div class="flex w-full flex-col gap-4">
+    <div class="flex w-full flex-col gap-4" id="column-4">
       {data.results.map((game: { name: string}) => {
         counter4++
         if (order4 == counter4) {

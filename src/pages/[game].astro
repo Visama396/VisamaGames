@@ -1,0 +1,8 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const { game } = Astro.params
+---
+<Layout title={`Details page of ${game}`}>
+  <h1>{game}</h1>
+</Layout>
